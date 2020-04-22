@@ -1,18 +1,19 @@
 import React from 'react';
+import { withTheme } from 'styled-components';
 import { Flex, InlineBlock, Text, Button } from '../../StyledComponents';
 
-function ProjectItem({ name, description, technologies, links }) {
+function ProjectItem({ name, description, technologies, links, theme }) {
     const openUrl = (url) => {
         window.open(url, '_blank');
     }
 
     return (
-        <Flex h="300px" bg="red" w="100%" p="2rem">
-            <InlineBlock bg="green" w="50%">
+        <Flex h="300px" bg={theme.cardColor} w="100%" p="2rem" m="1rem" br="5px">
+            <InlineBlock bg="pink" w="50%">
 
             </InlineBlock>
-            <Flex bg="gray" w="50%" vertical>
-                <Text bolder fs="2rem" m="1rem">
+            <Flex w="50%" vertical>
+                <Text ff={theme.fontFamilyHeading} fs="2rem" m="1rem">
                     {name}
                 </Text>
                 <Text bold fs="1rem" ml="1rem">
@@ -45,4 +46,4 @@ function ProjectItem({ name, description, technologies, links }) {
     );
 }
 
-export default ProjectItem;
+export default withTheme(ProjectItem);

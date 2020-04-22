@@ -1,23 +1,33 @@
 import React, { useState } from 'react';
 import { Flex, InlineBlock } from './StyledComponents'
-import styled, { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
 import Header from './Components/Header';
 import Project from './Components/Project';
 
-const GlobalStyle = createGlobalStyle`
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-`
 
-const MainContainer = styled.div`
-  background-color: ${props => props.backgroundColor};
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    background-color: ${(props) => props.theme.backgroundColor};
+    color: ${(props) => props.theme.textColor};
+    font-family: ${(props) => props.theme.fontFamily};
+    &, * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+  }
 `
 
 function App() {
   const [state] = useState({
+    theme: {
+      backgroundColor: "#303030",
+      textColor: "#fff",
+      cardColor: "#424242",
+      fontFamilyHeading: "'Luckiest Guy', sans-serif;",
+      fontFamily: "Roboto, sans-serif"
+    },
     header: {
       personName: "Christian Serad",
       profession: "Software Developer",
@@ -111,15 +121,15 @@ function App() {
   });
 
   return (
-    <>
+    <ThemeProvider theme={state.theme}>
       <GlobalStyle whiteColor />
       <Flex hcenter>
-        <InlineBlock bg="pink" w="1200px">
+        <InlineBlock w="1200px">
           <Header header={state.header} />
           <Project projects={state.project} />
         </InlineBlock>
       </Flex>
-    </>
+    </ThemeProvider>
   );
 }
 

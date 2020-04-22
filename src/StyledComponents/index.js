@@ -15,6 +15,7 @@ export const InlineBlock = styled.div`
     padding-right: ${props => props.pr};
     padding-bottom: ${props => props.pb};
     padding-left: ${props => props.pl};
+    border-radius: ${props => props.br};
 `
 
 export const Text = styled(InlineBlock)`

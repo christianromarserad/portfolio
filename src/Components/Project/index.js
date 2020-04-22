@@ -1,17 +1,18 @@
 import React from 'react';
+import { withTheme } from 'styled-components';
 import { Flex, Text, InlineBlock } from '../../StyledComponents'
 import ProjectItem from './ProjectItem';
 
 
-function Project({ projects }) {
+function Project({ projects, theme }) {
     return (
         <Flex vertical>
-            <Flex bg="gray" p="2rem" hcenter>
-                <Text bold fs="2rem">
+            <Flex p="2rem" hcenter>
+                <Text lighter ff={theme.fontFamilyHeading} fs="2rem">
                     Personal Projects
                 </Text>
             </Flex>
-            <Flex bg="pink" p="2rem" hcenter>
+            <Flex p="2rem" hcenter>
                 {
                     projects.map((project) => (
                         <ProjectItem
@@ -26,4 +27,4 @@ function Project({ projects }) {
     );
 }
 
-export default Project
+export default withTheme(Project)
