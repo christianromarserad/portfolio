@@ -1,7 +1,13 @@
 import React from 'react';
-import { withTheme } from 'styled-components';
+import styled, { withTheme } from 'styled-components';
 import { Flex, Text, InlineBlock, Button } from '../../StyledComponents'
 
+const SvgButton = styled(Button)`
+    fill: white;
+    &:hover {
+        fill: black;
+    }
+`
 
 function Header({ theme, header: { personName, profession, message, links } }) {
     const openUrl = (url) => {
@@ -19,9 +25,9 @@ function Header({ theme, header: { personName, profession, message, links } }) {
             <Flex w="50%" vcenter p="3rem">
                 {
                     links.map((link) => (
-                        <Button h="50px" w="25%" bg="red" onClick={() => openUrl(link.url)}>
+                        <SvgButton w="2.5rem" mr="2rem" onClick={() => openUrl(link.url)}>
                             {link.svg}
-                        </Button>
+                        </SvgButton>
                     ))
                 }
             </Flex>

@@ -1,6 +1,13 @@
 import React from 'react';
-import { withTheme } from 'styled-components';
+import styled, { withTheme } from 'styled-components';
 import { Flex, InlineBlock, Text, Button } from '../../StyledComponents';
+
+const SvgButton = styled(Button)`
+    fill: white;
+    &:hover {
+        fill: black;
+    }
+`
 
 function ProjectItem({ name, description, technologies, links, theme }) {
     const openUrl = (url) => {
@@ -35,9 +42,9 @@ function ProjectItem({ name, description, technologies, links, theme }) {
                 <Flex m="1rem">
                     {
                         links.map((link) => (
-                            <Button bg="red" onClick={() => openUrl(link.url)}>
+                            <SvgButton w="2rem" mr="1rem" p="3px" onClick={() => openUrl(link.url)}>
                                 {link.svg}
-                            </Button>
+                            </SvgButton>
                         ))
                     }
                 </Flex>
