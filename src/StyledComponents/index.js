@@ -2,26 +2,66 @@ import styled from 'styled-components';
 
 export const InlineBlock = styled.div`
     display: inline-block;
-    padding: ${props => props.padding};
-    margin: ${props => props.margin};
-    width: ${props => props.width};
-    height: ${props => props.height};
-    background-color: ${props => props.backgroundColor};
+    padding: ${props => props.p};
+    background-color: ${props => props.bg};
+    margin: ${props => props.m};
+    width: ${props => props.w};
+    height: ${props => props.h};
+    margin-top: ${props => props.mt};
+    margin-bottom: ${props => props.mb};
+    margin-right: ${props => props.mr};
+    margin-left: ${props => props.ml};
+    padding-top: ${props => props.pt};
+    padding-right: ${props => props.pr};
+    padding-bottom: ${props => props.pb};
+    padding-left: ${props => props.pl};
+`
+
+export const Text = styled(InlineBlock)`
+    font-family: ${props => props.ff};
+    font-size: ${props => props.fs};
+    font-weight: ${props => {
+        if (props.bold) {
+            return 'bold'
+        }
+        else if (props.bolder) {
+            return 'bolder'
+        }
+        else if (props.lighter) {
+            return 'lighter'
+        }
+    }};
 `
 
 export const Button = styled(InlineBlock)`
     cursor: pointer;
 `
 
-export const Flex = styled.div`
+export const Flex = styled(InlineBlock)`
     display: flex;
     flex-wrap: wrap;
-    flex-direction: ${props => props.flexDirection}; 
-    width: ${props => props.width};
-    height: ${props => props.height};
-    background-color: ${props => props.backgroundColor};
-    padding: ${props => props.padding};
+    flex-direction: ${props => props.vertical && 'column'}; 
     flex-grow: ${props => props.flexGrow};
-    justify-content: ${props => props.justifyContent};
-    align-items: ${props => props.alignItems};
+    justify-content: ${props => {
+        if (props.hstart) {
+            return 'start'
+        }
+        else if (props.hcenter) {
+            return 'center'
+        }
+        else if (props.hend) {
+            return 'end'
+        }
+    }};
+    align-items: ${props => {
+        if (props.vstart) {
+            return 'start'
+        }
+        else if (props.vcenter) {
+            return 'center'
+        }
+        else if (props.vend) {
+            return 'end'
+        }
+    }};
 `
