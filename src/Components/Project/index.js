@@ -3,7 +3,7 @@ import { Flex, Text, InlineBlock } from '../../StyledComponents'
 import ProjectItem from './ProjectItem';
 
 
-function Project() {
+function Project({ projects }) {
     return (
         <Flex vertical>
             <Flex bg="gray" p="2rem" hcenter>
@@ -12,7 +12,15 @@ function Project() {
                 </Text>
             </Flex>
             <Flex bg="pink" p="2rem" hcenter>
-                <ProjectItem />
+                {
+                    projects.map((project) => (
+                        <ProjectItem
+                            name={project.name}
+                            description={project.description}
+                            technologies={project.technologies}
+                            links={project.links} />
+                    ))
+                }
             </Flex>
         </Flex>
     );
