@@ -67,7 +67,7 @@ function App() {
       {
         name: "Big Calorie",
         description: "A simple web application for planning and managing your meals each day. It can track food nutrients, and calculate your BMR.",
-        videoUrl: "https://res.cloudinary.com/dnsrdfw3w/video/upload/w_800/v1587652762/bigcalorie_u5ubbb.mp4",
+        videoUrl: "https://res.cloudinary.com/dnsrdfw3w/video/upload/w_700/v1587652762/bigcalorie_u5ubbb.mp4",
         technologies: [
           {
             name: "React",
@@ -105,7 +105,7 @@ function App() {
       },
       {
         name: "School Notebook",
-        videoUrl: "https://res.cloudinary.com/dnsrdfw3w/video/upload/w_800/v1587652755/schoolnotebook_q7d170.mp4",
+        videoUrl: "https://res.cloudinary.com/dnsrdfw3w/video/upload/w_700/v1587652755/schoolnotebook_q7d170.mp4",
         description: "A note taking web application for students which they can easily share notes to each other. The sharing capability allows users for collaboration.",
         technologies: [
           {
@@ -153,7 +153,7 @@ function App() {
       },
       {
         name: "Acute Pediatrics Orientation",
-        videoUrl: "https://res.cloudinary.com/dnsrdfw3w/video/upload/w_800/v1587652762/acutepediatric_ak4dqd.mp4",
+        videoUrl: "https://res.cloudinary.com/dnsrdfw3w/video/upload/w_700/v1587652762/acutepediatric_ak4dqd.mp4",
         description: "A web application that used for employees for online training and orientation. It is mainly intented for the McMaster children hospital employees.",
         technologies: [
           {
@@ -193,7 +193,7 @@ function App() {
       },
       {
         name: "Hamilton Spray Pads",
-        videoUrl: "https://res.cloudinary.com/dnsrdfw3w/video/upload/w_800/v1587653848/hamiltonspraypads_aycn95.mp4",
+        videoUrl: "https://res.cloudinary.com/dnsrdfw3w/video/upload/w_700/v1587653848/hamiltonspraypads_aycn95.mp4",
         description: "A web application that locates spray pads in Hamilton, ON. You can search for specific and nearest spray pad locations",
         technologies: [
           {

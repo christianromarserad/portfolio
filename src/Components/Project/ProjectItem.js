@@ -2,6 +2,7 @@ import React from 'react';
 import styled, { withTheme } from 'styled-components';
 import { Flex, InlineBlock, Text, Button } from '../../StyledComponents';
 import { motion } from 'framer-motion';
+import ReactPlayer from 'react-player';
 
 const SvgButton = styled(Button)`
     fill: white;
@@ -42,7 +43,7 @@ function ProjectItem({ name, description, technologies, links, videoUrl, theme }
 
     return (
         <ProjectBlock bg={theme.cardColor} w="100%" p="2rem" mt="1rem" mb="1rem" br="5px">
-            <Video width="460px" autoPlay muted loop>
+            <Video width="470px" autoPlay muted loop playsInline>
                 <source src={videoUrl} type="video/mp4" />
             </Video>
 
