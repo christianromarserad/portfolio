@@ -10,7 +10,7 @@ const UserInfo = styled(Flex)`
     @media only screen and (max-width: 1000px) {
         & {
             width: 100%;
-            padding: 1rem;
+            padding: 0;
         }
     }
 `
@@ -20,7 +20,9 @@ const Links = styled(Flex)`
         & {
             width: 100%;
             align-items: start;
-            padding: 1rem;
+            padding: 0;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
         }
     }
 `
@@ -29,6 +31,7 @@ const HeaderBlock = styled(Flex)`
     @media only screen and (max-width: 1000px) {
         & {
             flex-wrap: wrap;
+            padding: 2rem
         }
     }
 `

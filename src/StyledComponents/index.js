@@ -40,7 +40,6 @@ export const Button = styled(InlineBlock)`
 
 export const Flex = styled(InlineBlock)`
     display: flex;
-    flex-wrap: wrap;
     flex-direction: ${props => props.vertical && 'column'}; 
     flex-grow: ${props => props.flexGrow};
     justify-content: ${props => {

@@ -234,7 +234,7 @@ function App() {
     <ThemeProvider theme={state.theme}>
       <GlobalStyle whiteColor />
       <Flex hcenter>
-        <MainContainer w="1200px" p="2rem">
+        <MainContainer w="1200px">
           <Header header={state.header} />
           <Project projects={state.project} />
         </MainContainer>

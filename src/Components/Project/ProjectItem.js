@@ -1,55 +1,95 @@
 import React from 'react';
 import styled, { withTheme } from 'styled-components';
 import { Flex, InlineBlock, Text, Button } from '../../StyledComponents';
+import { motion } from 'framer-motion';
 
 const SvgButton = styled(Button)`
     fill: white;
-    &:hover {
-        fill: black;
+`
+
+const Svg = styled(InlineBlock)`
+    fill: white;
+`
+
+const ProjectBlock = styled(Flex)`
+    @media only screen and (max-width: 1000px) {
+        & {
+            flex-wrap: wrap;
+        }
     }
 `
 
-function ProjectItem({ name, description, technologies, links, theme }) {
+const Video = styled.video`
+    @media only screen and (max-width: 1000px) {
+        & {
+            width: 100%;
+        }
+    }
+`
+
+const Technology = styled(Flex)`
+    @media only screen and (max-width: 1000px) {
+        & {
+            flex-wrap: wrap;
+        }
+    }
+`
+
+function ProjectItem({ name, description, technologies, links, videoUrl, theme }) {
     const openUrl = (url) => {
         window.open(url, '_blank');
     }
 
     return (
-        <Flex h="300px" bg={theme.cardColor} w="100%" p="2rem" m="1rem" br="5px">
-            <InlineBlock bg="pink" w="50%">
+        <ProjectBlock bg={theme.cardColor} w="100%" p="2rem" mt="1rem" mb="1rem" br="5px">
+            <Video width="460px" autoPlay muted loop>
+                <source src={videoUrl} type="video/mp4" />
+            </Video>
 
-            </InlineBlock>
-            <Flex w="50%" vertical>
-                <Text ff={theme.fontFamilyHeading} fs="2rem" m="1rem">
-                    {name}
-                </Text>
-                <Text bold fs="1rem" ml="1rem">
-                    {description}
-                </Text>
-                <Flex m="1rem">
-                    <Text bold fs="1rem" mr="1rem">
-                        Technologies
+            <Flex flexGrow="1" p="1rem" vertical>
+                <Flex>
+                    <Text ff={theme.fontFamilyHeading} fs="2rem" >
+                        {name}
                     </Text>
-                    {
-                        technologies.map((technology) => (
-                            <InlineBlock bg="red">
-                                {technology.logo || "wala pay logo"}
-                            </InlineBlock>
-                        ))
-                    }
                 </Flex>
 
-                <Flex m="1rem">
+                <Flex pt="1rem">
+                    <Text bold fs="1rem" >
+                        {description}
+                    </Text>
+                </Flex>
+
+                <Technology vcenter pb="4rem" pt="1rem">
+                    {
+                        technologies.map((technology) => (
+                            <Flex p="0.1rem" mr="1.2rem" br="10px" vertical vcenter>
+                                <Svg w="1rem">
+                                    {technology.svg}
+                                </Svg>
+                                <Text fs="0.6rem" mt="3px">{technology.name}</Text>
+                            </Flex>
+                        ))
+                    }
+                </Technology>
+
+                <Flex>
                     {
                         links.map((link) => (
-                            <SvgButton w="2rem" mr="1rem" p="3px" onClick={() => openUrl(link.url)}>
-                                {link.svg}
+
+                            <SvgButton w="1.6rem" mr="1rem" onClick={() => openUrl(link.url)}>
+                                <motion.div
+                                    whileHover={{
+                                        scale: 1.3,
+                                    }}>
+                                    {link.svg}
+                                </motion.div>
                             </SvgButton>
+
                         ))
                     }
                 </Flex>
             </Flex>
-        </Flex >
+        </ProjectBlock >
     );
 }
 
