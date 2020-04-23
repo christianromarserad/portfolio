@@ -42,7 +42,7 @@ function ProjectItem({ name, description, technologies, links, videoUrl, theme }
     }
 
     return (
-        <ProjectBlock bg={theme.cardColor} w="100%" p="2rem" mt="1rem" mb="1rem" br="5px">
+        <ProjectBlock bg={theme.cardColor} w="100%" p="2rem" mt="1rem" mb="1rem" br="5px" vstart>
             <Video width="470px" autoPlay muted loop playsInline>
                 <source src={videoUrl} type="video/mp4" />
             </Video>
