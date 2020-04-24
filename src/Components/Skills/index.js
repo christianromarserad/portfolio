@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { withTheme } from 'styled-components';
-import { InlineBlock, Flex, Text } from '../../StyledComponents'
+import { InlineBlock, Flex, Text } from '../../StyledComponents';
 
 const Svg = styled(InlineBlock)`
     fill: white;
