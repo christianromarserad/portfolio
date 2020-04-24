@@ -2,7 +2,7 @@ import React from 'react';
 import { withTheme } from 'styled-components';
 import { Flex, Text, InlineBlock } from '../../StyledComponents'
 import ProjectItem from './ProjectItem';
-
+import styled from 'styled-components';
 
 function Project({ projects, theme }) {
     return (

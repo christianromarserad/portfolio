@@ -5,6 +5,7 @@ import Header from './Components/Header';
 import Project from './Components/Project';
 import userInfo from './Configurations/UserInfo';
 import themeInfo from './Configurations/ThemeInfo';
+import Skills from './Components/Skills';
 
 
 
@@ -37,6 +38,7 @@ function App() {
         <MainContainer w="1200px">
           <Header header={userInfo.header} />
           <Project projects={userInfo.project} />
+          <Skills skills={userInfo.skills} />
         </MainContainer>
       </Flex>
     </ThemeProvider>
