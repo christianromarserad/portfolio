@@ -1,15 +1,12 @@
 import React from 'react';
 import styled, { withTheme } from 'styled-components';
-import { Flex, InlineBlock, Text, Button } from '../../StyledComponents';
+import { Flex, InlineBlock, Text, SvgButton } from '../../StyledComponents';
 import { motion } from 'framer-motion';
 import ReactPlayer from 'react-player';
 
-const SvgButton = styled(Button)`
-    fill: white;
-`
 
 const Svg = styled(InlineBlock)`
-    fill: white;
+    fill: ${props => props.theme.textColor};
 `
 
 const ProjectBlock = styled(Flex)`
@@ -77,7 +74,7 @@ function ProjectItem({ name, description, technologies, links, videoUrl, theme }
                     {
                         links.map((link) => (
 
-                            <SvgButton w="1.6rem" mr="1rem" onClick={() => openUrl(link.url)}>
+                            <SvgButton w="1.6rem" mr="1rem" fill={theme.textColor} onClick={() => openUrl(link.url)}>
                                 <motion.div
                                     whileHover={{
                                         scale: 1.3,

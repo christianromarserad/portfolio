@@ -38,6 +38,11 @@ export const Button = styled(InlineBlock)`
     cursor: pointer;
 `
 
+export const SvgButton = styled(Button)`
+    fill: ${props => props.fill};
+`
+
+
 export const Flex = styled(InlineBlock)`
     display: flex;
     flex-direction: ${props => props.vertical && 'column'}; 

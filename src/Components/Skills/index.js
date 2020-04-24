@@ -3,7 +3,7 @@ import styled, { withTheme } from 'styled-components';
 import { InlineBlock, Flex, Text } from '../../StyledComponents';
 
 const Svg = styled(InlineBlock)`
-    fill: white;
+    fill: ${props => props.theme.textColor};
 `
 
 const SkillsBlock = styled(Flex)`

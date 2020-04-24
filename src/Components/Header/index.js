@@ -1,11 +1,8 @@
 import React from 'react';
 import styled, { withTheme } from 'styled-components';
 import { motion } from 'framer-motion';
-import { Flex, Text, InlineBlock, Button } from '../../StyledComponents'
+import { Flex, Text, SvgButton } from '../../StyledComponents'
 
-const SvgButton = styled(Button)`
-    fill: white;
-`
 const UserInfo = styled(Flex)`
     @media only screen and (max-width: 1000px) {
         & {
@@ -84,7 +81,7 @@ function Header({ theme, header: { personName, profession, message, links } }) {
                 <Links w="100%" vcenter p="3rem">
                     {
                         links.map((link) => (
-                            <SvgButton w="2.5rem" mr="2rem" onClick={() => openUrl(link.url)}>
+                            <SvgButton w="2.5rem" mr="2rem" fill={theme.textColor} onClick={() => openUrl(link.url)}>
                                 <motion.div
                                     variants={svgItem}
                                     whileHover={{

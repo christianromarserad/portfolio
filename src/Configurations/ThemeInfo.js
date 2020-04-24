@@ -1,5 +1,5 @@
 
-const themeInfo = {
+export const themeDark = {
     backgroundColor: "#303030",
     textColor: "#fff",
     cardColor: "#424242",
@@ -7,4 +7,10 @@ const themeInfo = {
     fontFamily: "Roboto, sans-serif"
 };
 
-export default themeInfo;
+export const themeLight = {
+    backgroundColor: "#FCFCFC",
+    textColor: "#333333",
+    cardColor: "#EBEBEB",
+    fontFamilyHeading: "'Luckiest Guy', sans-serif;",
+    fontFamily: "Roboto, sans-serif"
+};
