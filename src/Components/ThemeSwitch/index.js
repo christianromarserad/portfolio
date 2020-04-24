@@ -17,6 +17,9 @@ const darkThemeButton = (changeTheme) => (
         exit={{
             x: -800
         }}
+        whileHover={{
+            scale: 1.3,
+        }}
         transition={{
             duration: 0.5
         }}>
@@ -49,6 +52,9 @@ const lightThemeButton = (changeTheme) => (
         }}
         exit={{
             x: -800
+        }}
+        whileHover={{
+            scale: 1.3,
         }}
         transition={{
             duration: 0.5
