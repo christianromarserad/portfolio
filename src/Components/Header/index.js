@@ -64,18 +64,11 @@ function Header({ theme, header: { personName, profession, message, links } }) {
             variants={container}
             initial="hidden"
             animate="show">
-            <HeaderBlock>
+            <HeaderBlock> 
                 <UserInfo w="100%" vertical p="8rem">
                     <motion.div variants={userInfo}>
                         <Text fs="3.5rem" ff={theme.fontFamilyHeading}>{personName}</Text>
                     </motion.div>
-                    <motion.div variants={userInfo}>
-                        <Text fs="1.6rem" mb="1.6rem">{profession}</Text>
-                    </motion.div>
-                    <motion.div variants={userInfo}>
-                        <Text w="80%">{message}</Text>
-                    </motion.div>
-
                 </UserInfo>
 
                 <Links w="100%" vcenter p="3rem">
